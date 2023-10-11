@@ -5,12 +5,15 @@ import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-from firebase_admin import  storage
+from firebase_admin import storage
+from decouple import config
+DATABASE_URL = config('DATABASE_URL')
+STORAGE_BUCKET = config('STORAGE_BUCKET')
 
 cred = credentials.Certificate("credentials.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://pommy-a7657-default-rtdb.firebaseio.com/",
-    'storageBucket': "pommy-a7657.appspot.com"
+    'databaseURL': DATABASE_URL,
+    'storageBucket': STORAGE_BUCKET
 })
 
 
