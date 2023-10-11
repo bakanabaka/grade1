@@ -3,7 +3,3 @@
 
 # Ignore credentials.json
 /credentials.json
-
-# Ignore directories like node_modules, .idea (for Node.js and IntelliJ IDEA)
-node_modules/
-.idea/
